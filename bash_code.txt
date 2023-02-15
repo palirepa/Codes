@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Definice vlastních proměnných
+name="Pavol"
+age=22
+
+# Sloučení textu
+greeting="Ahoj $name, tvoj vek je $age."
+
+# Sčítání
+let age=age+1
+
+# Přesměrování výstupu do souboru
+echo $greeting > output.txt
+
+# Řetězení příkazů pomocí roury
+cat output.txt | tr [:lower:] [:upper:]
+
+# Podmínka if ... then ... else
+if [ $age -gt 20 ]
+then
+  echo "Si starsi ako 20."
+  exit 2
+else
+  echo "Si mladsi ako 20."
+  exit 3
+fi
